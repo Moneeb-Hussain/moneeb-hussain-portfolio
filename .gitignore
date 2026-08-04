@@ -1,0 +1,95 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+/test-results
+/playwright-report
+/blob-report
+/playwright/.cache
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+**/.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Local tooling
+.tmp-venv/
+
+# ---------------------------------------------------------------------------
+# Private personal documents & source evidence — NEVER commit / push
+# Kept locally for portfolio authoring only.
+# ---------------------------------------------------------------------------
+
+# CV, transcripts, resume versions
+/CV + Trans/
+/CV Final/
+/Resume_Versioning/
+/Educational_Docs/
+
+# Certificates & volunteer / identity docs (includes passport)
+/Certificates/
+/Volunteer_Certificates/
+
+# Thesis, FYP, research statements, reference screenshots
+/FYP/
+/Reseach-Statement/
+/projects-to-make/
+
+# Deployed/public copies of personal documents & certificate images
+/public/documents/
+/public/images/certificates/
+
+# Common document / office formats anywhere in the repo
+*.pdf
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.xls
+*.xlsx
+*.odt
+*.ods
+*.odp
+*.rtf
+*.pages
+*.key
+*.numbers
+
+# Identity / sensitive scans (extra safety)
+*passport*
+*Passport*
+*transcript*
+*Transcript*
