@@ -7,7 +7,7 @@ import { ExperienceTimeline } from "@/components/experience/ExperienceTimeline";
 export const metadata: Metadata = buildPageMetadata({
   title: "Experience",
   description:
-    "A reverse-chronological record of employment, education, and mentorship — from plant-floor automation to production software engineering.",
+    "A reverse-chronological record of employment, education, and mentorship - from plant-floor automation to production software engineering.",
   path: "/experience",
 });
 

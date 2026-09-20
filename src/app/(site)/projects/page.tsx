@@ -7,7 +7,7 @@ import { ProjectFilter } from "@/components/projects/ProjectFilter";
 export const metadata: Metadata = buildPageMetadata({
   title: "Work",
   description:
-    "Computer vision, multi-agent AI, and intelligent automation systems — academic, hackathon, and professional work by Moneeb Hussain.",
+    "Computer vision, multi-agent AI, and intelligent automation systems - academic, hackathon, and professional work by Moneeb Hussain.",
   path: "/projects",
 });
 

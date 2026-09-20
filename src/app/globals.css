@@ -47,6 +47,7 @@ html {
 }
 
 #work,
+#more-work,
 #experience,
 #skills,
 #achievements,
@@ -108,7 +109,7 @@ button {
 
 /* ---------------------------------------------------------------------------
    Handoff portfolio (homepage + /retail-checkout)
-   Tokens from design_handoff_portfolio/README.md — OKLCH, dark default.
+   Tokens from design_handoff_portfolio/README.md - OKLCH, dark default.
    Scoped to .pf so existing (site) routes keep their original tokens.
 --------------------------------------------------------------------------- */
 
@@ -171,6 +172,11 @@ html[data-theme="light"] .pf {
 .pf a {
   color: inherit;
   text-decoration: none;
+}
+
+.pf a.pf-btn-primary,
+.pf a.pf-resume {
+  color: var(--pf-accent-on);
 }
 
 .pf-inner {
@@ -589,6 +595,37 @@ html[data-theme="light"] .pf {
   gap: 20px;
   border-top: 1px solid var(--pf-border-soft);
   margin: 0 28px 28px;
+}
+
+.pf-more-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.pf-more-card {
+  border: 1px solid var(--pf-border);
+  border-radius: 16px;
+  padding: 24px;
+  background: var(--pf-card);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pf-more-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.pf-more-blurb {
+  font-size: 14px;
+  color: var(--pf-text-dim);
+  margin: 0;
+  line-height: 1.55;
+  flex: 1;
 }
 
 .pf-block-label {
@@ -1101,6 +1138,151 @@ html[data-theme="light"] .pf {
   font-weight: 600;
 }
 
+.pf-cs-bleed {
+  max-width: 900px;
+  width: calc(100% - (2 * var(--pf-pad-x)));
+  margin: 0 auto 8px;
+}
+
+.pf-cs-figure {
+  margin: 28px 0 8px;
+}
+
+.pf-cs-figure:first-child {
+  margin-top: 0;
+}
+
+.pf-cs-figure-frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--pf-border);
+  background: var(--pf-card);
+}
+
+.pf-cs-figure-frame.is-contain {
+  background: #f4f6f8;
+}
+
+.pf-cs-figure-img {
+  object-fit: cover;
+}
+
+.pf-cs-figure-frame.is-contain .pf-cs-figure-img {
+  object-fit: contain;
+}
+
+.pf-cs-caption {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--pf-text-faint);
+  margin: 10px 2px 0;
+  max-width: 760px;
+}
+
+.pf-cs-fig-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.pf-cs-fig-pair .pf-cs-figure {
+  margin: 0;
+}
+
+.pf-cs-pipeline {
+  list-style: none;
+  margin: 24px 0 8px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+  gap: 12px;
+}
+
+.pf-cs-pipe {
+  border: 1px solid var(--pf-border);
+  border-radius: 14px;
+  padding: 16px 16px 18px;
+  background: var(--pf-card);
+}
+
+.pf-cs-pipe-num {
+  font-family: var(--pf-mono);
+  font-size: 11px;
+  color: var(--pf-accent);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.pf-cs-pipe-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.pf-cs-pipe-text {
+  font-size: 13px;
+  color: var(--pf-text-dim);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.pf-cs-insight {
+  margin: 24px 0 8px;
+  padding: 18px 20px;
+  border-radius: 0 14px 14px 0;
+  border-left: 3px solid var(--pf-accent);
+  background: var(--pf-card);
+  border-top: 1px solid var(--pf-border);
+  border-right: 1px solid var(--pf-border);
+  border-bottom: 1px solid var(--pf-border);
+}
+
+.pf-cs-insight-label {
+  font-family: var(--pf-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--pf-accent);
+  margin-bottom: 8px;
+}
+
+.pf-cs-insight p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--pf-text-dim);
+  line-height: 1.65;
+}
+
+.pf-cs-assume {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.pf-cs-assume-card {
+  border: 1px solid var(--pf-border);
+  border-radius: 14px;
+  padding: 18px 18px 20px;
+  background: var(--pf-card);
+}
+
+.pf-cs-assume-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.pf-cs-assume-text {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--pf-text-dim);
+  line-height: 1.55;
+}
+
 .pf-placeholder {
   max-width: 900px;
   width: calc(100% - (2 * var(--pf-pad-x)));
@@ -1311,6 +1493,56 @@ html[data-theme="light"] .pf {
   background: var(--pf-card);
 }
 
+.pf-cs-ask {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px 32px;
+  width: calc(100% - (2 * var(--pf-pad-x)));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border: 1px solid var(--pf-border);
+  border-radius: 16px;
+  background: var(--pf-bg-alt-2);
+}
+
+.pf-cs-ask-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.pf-cs-ask-lead {
+  margin: 0;
+  font-size: 14px;
+  color: var(--pf-text-dim);
+  line-height: 1.5;
+  max-width: 460px;
+}
+
+.pf-cs-ask-btn {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--pf-accent-on);
+  background: var(--pf-accent);
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: inherit;
+}
+
+.pf-cs-ask-btn:hover {
+  filter: brightness(1.06);
+}
+
 .pf-cs-next {
   max-width: 900px;
   margin: 0 auto;
@@ -1389,6 +1621,20 @@ html[data-theme="light"] .pf {
 
   .pf-placeholder {
     height: 220px;
+  }
+
+  .pf-cs-fig-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .pf-cs-pipeline {
+    grid-template-columns: 1fr;
+  }
+
+  .pf-cs-ask {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
   }
 }
 

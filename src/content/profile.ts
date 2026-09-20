@@ -3,7 +3,7 @@ import type { Profile } from "./types";
 /**
  * Single source of truth for Moneeb's identity, positioning, and contact
  * links. Every value here is verified against the latest CV and the
- * portfolio content audit — do not add a phone number or unverified metrics.
+ * portfolio content audit - do not add a phone number or unverified metrics.
  */
 export const profile: Profile = {
   name: "Moneeb Hussain",
@@ -27,7 +27,7 @@ export const profile: Profile = {
   },
   /**
    * Homepage credibility strip. Every figure is traceable to a specific
-   * project or role — see PORTFOLIO_CONTENT_AUDIT.md §14. Never add a metric
+   * project or role - see PORTFOLIO_CONTENT_AUDIT.md §14. Never add a metric
    * here without a verified source.
    */
   metrics: [

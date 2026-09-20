@@ -16,8 +16,8 @@ export function FinalCta() {
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-pretty leading-relaxed text-surface/70">
           If you&apos;re building perception, reasoning, or automation
-          systems and want to talk specifics — architecture, trade-offs, or a
-          role — I&apos;d like to hear from you.
+          systems and want to talk specifics - architecture, trade-offs, or a
+          role - I&apos;d like to hear from you.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

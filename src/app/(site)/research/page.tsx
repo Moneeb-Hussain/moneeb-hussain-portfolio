@@ -18,7 +18,7 @@ export default function ResearchPage() {
         as="h1"
         eyebrow="Research"
         title="Open questions, not claimed contributions"
-        description="There's no peer-reviewed publication to point to yet — these are the durable questions that keep showing up across the projects, framed honestly as things worth exploring further, most naturally through funded graduate research."
+        description="There's no peer-reviewed publication to point to yet - these are the durable questions that keep showing up across the projects, framed honestly as things worth exploring further, most naturally through funded graduate research."
       />
 
       <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">

@@ -17,7 +17,7 @@ export default function ContactPage() {
         as="h1"
         eyebrow="Contact"
         title="Get in touch"
-        description="Whether it's about a role, a research collaboration, or a question about how one of these systems works — reach out directly."
+        description="Whether it's about a role, a research collaboration, or a question about how one of these systems works - reach out directly."
       />
 
       <div className="mt-10">

@@ -1,13 +1,44 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   RETAIL_CASE_STUDY,
+  type CaseStudyFigure,
 } from "@/content/handoff";
+import { AskBar } from "./AskBar";
 import { CaseStudyNav } from "./Nav";
+
+function Figure({
+  figure,
+  priority = false,
+}: {
+  figure: CaseStudyFigure;
+  priority?: boolean;
+}) {
+  return (
+    <figure className="pf-cs-figure">
+      <div
+        className={`pf-cs-figure-frame${figure.contain ? " is-contain" : ""}`}
+        style={{ aspectRatio: figure.aspect ?? "16 / 10" }}
+      >
+        <Image
+          src={figure.src}
+          alt={figure.alt}
+          fill
+          sizes="(max-width: 960px) calc(100vw - 40px), 900px"
+          className="pf-cs-figure-img"
+          priority={priority}
+        />
+      </div>
+      <figcaption className="pf-cs-caption">{figure.caption}</figcaption>
+    </figure>
+  );
+}
 
 export function CaseStudyView() {
   const study = RETAIL_CASE_STUDY;
   const highlight = study.resultHighlight;
   const [beforeHighlight, afterHighlight] = study.result[0].split(highlight);
+  const figures = study.figures;
 
   return (
     <>
@@ -27,8 +58,8 @@ export function CaseStudyView() {
           </div>
         </header>
 
-        <div className="pf-placeholder" aria-hidden="true">
-          <div className="pf-placeholder-label">{study.placeholders[0].label}</div>
+        <div className="pf-cs-bleed">
+          <Figure figure={figures.hardware} priority />
         </div>
 
         <section className="pf-cs-section">
@@ -68,12 +99,34 @@ export function CaseStudyView() {
         <section className="pf-cs-section">
           <div className="pf-cs-hrow">
             <span className="pf-cs-num">02</span>
-            <h2 className="pf-cs-h2">Approach</h2>
+            <h2 className="pf-cs-h2">How it works</h2>
           </div>
           <p className="pf-cs-body">{study.approachIntro}</p>
+          <ol className="pf-cs-pipeline">
+            {study.pipeline.map((step) => (
+              <li key={step.mark} className="pf-cs-pipe">
+                <div className="pf-cs-pipe-num">{step.mark}</div>
+                <div className="pf-cs-pipe-title">{step.title}</div>
+                <p className="pf-cs-pipe-text">{step.text}</p>
+              </li>
+            ))}
+          </ol>
+          <aside className="pf-cs-insight">
+            <div className="pf-cs-insight-label">Why the belt never stops</div>
+            <p>{study.countingInsight}</p>
+          </aside>
+          <Figure figure={figures.virtualLine} />
+        </section>
+
+        <section className="pf-cs-section">
+          <div className="pf-cs-hrow">
+            <span className="pf-cs-num">03</span>
+            <h2 className="pf-cs-h2">Hardware</h2>
+          </div>
+          <p className="pf-cs-body">{study.hardwareIntro}</p>
           <div className="pf-sub-grid">
             <div className="pf-sub-card">
-              <div className="pf-sub-title">Hardware</div>
+              <div className="pf-sub-title">Checkout rig</div>
               <ul className="pf-sub-list">
                 {study.hardware.map((item) => (
                   <li key={item}>{item}</li>
@@ -89,15 +142,46 @@ export function CaseStudyView() {
               </ul>
             </div>
           </div>
+          <div className="pf-cs-fig-pair">
+            <Figure figure={figures.indexer} />
+            <Figure figure={figures.circuit} />
+          </div>
+          <Figure figure={figures.team} />
         </section>
-
-        <div className="pf-placeholder" aria-hidden="true">
-          <div className="pf-placeholder-label">{study.placeholders[1].label}</div>
-        </div>
 
         <section className="pf-cs-section">
           <div className="pf-cs-hrow">
-            <span className="pf-cs-num">03</span>
+            <span className="pf-cs-num">04</span>
+            <h2 className="pf-cs-h2">Dataset</h2>
+          </div>
+          <p className="pf-cs-body">
+            The detector never saw generic product photography. Training frames
+            came off this conveyor, under this hood, at this camera angle. That
+            closed the gap between training and the live checkout view.
+          </p>
+          <div className="pf-cs-fig-pair">
+            <Figure figure={figures.labelimg} />
+            <Figure figure={figures.labelimgBoxes} />
+          </div>
+        </section>
+
+        <section className="pf-cs-section">
+          <div className="pf-cs-hrow">
+            <span className="pf-cs-num">05</span>
+            <h2 className="pf-cs-h2">Detection and billing</h2>
+          </div>
+          <p className="pf-cs-body">
+            Once a class is recognized, the GUI adds its price to a running
+            bill. Checkout prints the receipt. Several SKUs can sit in frame at
+            once. The virtual line is what stops a box being billed twice.
+          </p>
+          <Figure figure={figures.detection} />
+          <Figure figure={figures.billing} />
+        </section>
+
+        <section className="pf-cs-section">
+          <div className="pf-cs-hrow">
+            <span className="pf-cs-num">06</span>
             <h2 className="pf-cs-h2">What changed from V-2</h2>
           </div>
           <p className="pf-cs-body">{study.v2Intro}</p>
@@ -116,7 +200,7 @@ export function CaseStudyView() {
 
         <section className="pf-cs-section">
           <div className="pf-cs-hrow">
-            <span className="pf-cs-num">04</span>
+            <span className="pf-cs-num">07</span>
             <h2 className="pf-cs-h2">Result</h2>
           </div>
           <p className="pf-cs-body">
@@ -125,11 +209,19 @@ export function CaseStudyView() {
             {afterHighlight}
           </p>
           <p className="pf-cs-body">{study.result[1]}</p>
+          <div className="pf-cs-assume">
+            {study.assumptions.map((item) => (
+              <div key={item.title} className="pf-cs-assume-card">
+                <div className="pf-cs-assume-title">{item.title}</div>
+                <p className="pf-cs-assume-text">{item.text}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section className="pf-cs-section">
           <div className="pf-cs-hrow">
-            <span className="pf-cs-num">05</span>
+            <span className="pf-cs-num">08</span>
             <h2 className="pf-cs-h2">Stack</h2>
           </div>
           <div className="pf-cs-stack">
@@ -140,6 +232,8 @@ export function CaseStudyView() {
             ))}
           </div>
         </section>
+
+        <AskBar />
 
         <section className="pf-cs-next">
           <Link href="/#work">← Back to all projects</Link>

@@ -5,7 +5,12 @@
 
 export type ThemeName = "dark" | "light";
 export type ProjectSort = "recent" | "impact";
-export type ProjectFilter = "All" | "Computer Vision" | "GenAI" | "Robotics";
+export type ProjectFilter =
+  | "All"
+  | "Computer Vision"
+  | "GenAI"
+  | "Robotics"
+  | "Software";
 
 export const THEME_STORAGE_KEY = "portfolio-theme";
 
@@ -25,13 +30,14 @@ export interface HandoffProject {
   id: string;
   title: string;
   date: string;
+  featured?: boolean;
   tags: Array<Exclude<ProjectFilter, "All">>;
   blurb: string;
   problem: string;
   approach: string;
   result: string;
   stack: string[];
-  sourceHref: string;
+  sourceHref: string | null;
   caseStudyHref: string | null;
   impact: number;
 }
@@ -76,6 +82,25 @@ export interface CaseStudyImprovement {
   to: string;
 }
 
+export interface CaseStudyFigure {
+  src: string;
+  alt: string;
+  caption: string;
+  contain?: boolean;
+  aspect?: string;
+}
+
+export interface CaseStudyPipelineStep {
+  mark: string;
+  title: string;
+  text: string;
+}
+
+export interface CaseStudyAssumption {
+  title: string;
+  text: string;
+}
+
 export const handoffProfile = {
   name: "Moneeb Hussain",
   mark: "MH",
@@ -117,6 +142,7 @@ export const STATS: HandoffStat[] = [
 export const PROJECTS: HandoffProject[] = [
   {
     id: "retail-checkout",
+    featured: true,
     title: "Automatic Retail Checkout V-3",
     date: "2020 – 2021 · Senior Thesis",
     tags: ["Computer Vision", "Robotics"],
@@ -125,7 +151,7 @@ export const PROJECTS: HandoffProject[] = [
     problem:
       "Manual barcode scanning bottlenecks checkout lines. The goal: identify retail items and generate a bill without a barcode scanner or a skilled operator.",
     approach:
-      "Trained YOLOv4-tiny on a custom conveyor-captured dataset of 3,500 images across 70 product classes. Designed a rotary-indexer mechanism to automate new-product image capture, paired OpenCV inference with controlled LED lighting, and wired the pipeline to a GUI for automatic receipt generation.",
+      "Trained YOLOv4-tiny on 3,500 conveyor frames across 70 classes. Replaced V-2's laser stop with a virtual counting line so the belt stays running, built a rotary indexer to capture new SKUs, and wired OpenCV inference to a Tkinter GUI and HP LaserJet.",
     result:
       "98.78% detection accuracy in controlled testing. Checkout time per item dropped from ~4s to under 1s, with multiple products now detectable on a running conveyor instead of one at a time.",
     stack: [
@@ -138,10 +164,11 @@ export const PROJECTS: HandoffProject[] = [
     ],
     sourceHref: "https://github.com/Moneeb-Hussain",
     caseStudyHref: "/retail-checkout",
-    impact: 3,
+    impact: 13,
   },
   {
     id: "heatlens",
+    featured: true,
     title: "HeatLens",
     date: "Sep 2026 · Hackathon",
     tags: ["GenAI", "Computer Vision"],
@@ -164,10 +191,11 @@ export const PROJECTS: HandoffProject[] = [
     ],
     sourceHref: "https://github.com/Moneeb-Hussain",
     caseStudyHref: null,
-    impact: 2,
+    impact: 10,
   },
   {
     id: "livestock-ai",
+    featured: true,
     title: "Livestock AI",
     date: "May 2026 · Hackathon · Team Lead",
     tags: ["GenAI", "Robotics"],
@@ -178,7 +206,7 @@ export const PROJECTS: HandoffProject[] = [
     approach:
       "Led a team building multimodal triage across symptom chat, photo observations, and voice input, with structured AI outputs carrying severity labels and safety validation before any care advice.",
     result:
-      "Deployed a live triage app with case history and outbreak reporting, including a built-in vet-escalation path for high-severity cases.",
+      "Shipped a live triage app with case history and outbreak reporting, including a vet-escalation path for high-severity cases. Guidance only - not a veterinary diagnosis.",
     stack: [
       "Next.js",
       "FastAPI",
@@ -187,8 +215,197 @@ export const PROJECTS: HandoffProject[] = [
       "Gemini Vision",
       "OpenStreetMap",
     ],
-    sourceHref: "https://github.com/Moneeb-Hussain",
+    sourceHref: "https://github.com/Moneeb-Hussain/livestock-ai-assistant",
     caseStudyHref: null,
+    impact: 9,
+  },
+  {
+    id: "aegisops-ai",
+    featured: true,
+    title: "AegisOps AI - Digital Hospital Command Center",
+    date: "Hackathon · AI/ML Engineer",
+    tags: ["GenAI"],
+    blurb:
+      "Hospital operations prototype that scores urgency, tracks resources, and requires human approval before any action.",
+    problem:
+      "Hospital operations teams juggle beds, staff, and incoming case urgency without a single view that ranks what needs attention first.",
+    approach:
+      "Built FastAPI urgency scoring and OpenAI recommendations with confidence plus alternatives, wired to a React command-center UI and Supabase. Every recommendation sits behind human approve/override, with a rule-based fallback if the AI service is down.",
+    result:
+      "Hackathon prototype validated on simulated scenarios - decision support only, no diagnosis, no real patient data, no clinical deployment.",
+    stack: ["FastAPI", "React", "Tailwind CSS", "Supabase", "OpenAI", "Render"],
+    sourceHref:
+      "https://github.com/Moneeb-Hussain/real-time-hospital-intelligence-platform",
+    caseStudyHref: "/projects/aegisops-ai",
+    impact: 12,
+  },
+  {
+    id: "firstcheck-ai",
+    featured: true,
+    title: "FirstCheck AI - VC Brain",
+    date: "Hack-Nation · VC Brain Hackathon",
+    tags: ["GenAI"],
+    blurb:
+      "Multi-agent pipeline that screens startups, drafts memos, and argues with its own conclusions before a human signs off.",
+    problem:
+      "Early-stage screening means reading founder materials, filings, and market context at volume - slow and inconsistent when done by hand.",
+    approach:
+      "Contributed to the backend and trustworthy-AI path: discovery → extraction → screening → diligence → memo, then adversarial review and verification, with a required human decision and a full audit trail.",
+    result:
+      "Hackathon research prototype of a trust-oriented screening pipeline. Not investment advice; no customers or production deployment claimed.",
+    stack: ["Next.js", "FastAPI", "SQLite", "OpenAI", "Multi-agent pipeline"],
+    sourceHref: "https://github.com/Moneeb-Hussain/venture-intelligence",
+    caseStudyHref: "/projects/firstcheck-ai",
+    impact: 11,
+  },
+  {
+    id: "pakai-capital",
+    title: "PakAI Capital",
+    date: "Hackathon · AI Systems Developer",
+    tags: ["GenAI"],
+    blurb:
+      "LLM agents that specialize in market, filings, news, macro, and risk data for Pakistan Stock Exchange research.",
+    problem:
+      "PSX research is split across market data, filings, news, macro, and risk - hard to assemble into one view under time pressure.",
+    approach:
+      "Built a hackathon prototype where each LLM agent owns one data domain and the outputs are combined into a single research picture of listed activity.",
+    result:
+      "Research prototype for synthesizing a PSX research view. Not financial advice.",
+    stack: ["Next.js", "FastAPI", "Python", "LLM Agents"],
+    sourceHref:
+      "https://github.com/abdulrehman-work/psx-ai-trading-agents-hackathon",
+    caseStudyHref: null,
+    impact: 8,
+  },
+  {
+    id: "hackerrank-orchestrate",
+    title: "HackerRank Orchestrate - Terminal Triage Agent",
+    date: "May 2026 · Competition",
+    tags: ["GenAI"],
+    blurb:
+      "Terminal agent that triages support-style tickets across multiple corpora.",
+    problem:
+      "Support-style tickets arrive across different corpora and need consistent triage without a heavyweight UI.",
+    approach:
+      "Designed a terminal agent that routes and triages tickets across HackerRank, Claude, and Visa-related corpora for the Orchestrate competition.",
+    result:
+      "Finished top 4% - rank 373 of roughly 10,000 entrants after a judged interview round.",
+    stack: ["Python", "LLM Agents", "Terminal Tooling"],
+    sourceHref: null,
+    caseStudyHref: null,
+    impact: 7,
+  },
+  {
+    id: "esgtree",
+    title: "ESGTree - Sustainability Reporting Platform",
+    date: "Septem Systems · Production",
+    tags: ["Software"],
+    blurb:
+      "Production ESG data-collection and reporting platform, described without client-identifying detail.",
+    problem:
+      "Organisations need a structured way to collect ESG data and turn it into reports without a one-off spreadsheet process.",
+    approach:
+      "Built the full-stack reporting platform at Septem Systems: Nuxt 2 / Vuex on the client, Node.js APIs, and MySQL for persistence.",
+    result:
+      "Shipped as a production client engagement. Case details stay sanitised.",
+    stack: ["Nuxt 2", "Vuex", "Node.js", "MySQL"],
+    sourceHref: null,
+    caseStudyHref: "/projects/esgtree",
+    impact: 6,
+  },
+  {
+    id: "unodc-workflow",
+    title: "MLA & Extradition Workflow Platform",
+    date: "Jun 2024 – Jan 2026 · Septem Systems",
+    tags: ["Software"],
+    blurb:
+      "Case-management workflow for cross-border legal assistance requests, described at system level only.",
+    problem:
+      "Mutual legal assistance and extradition requests need a structured path across teams, without leaking case records into a public writeup.",
+    approach:
+      "Built the workflow platform as a full-stack developer: TypeScript, NestJS, Vue 3, Pinia, Vuetify, and MySQL.",
+    result:
+      "Production client engagement at Septem Systems. Process detail and case records are not published.",
+    stack: ["TypeScript", "NestJS", "Vue 3", "Pinia", "Vuetify", "MySQL"],
+    sourceHref: null,
+    caseStudyHref: "/projects/unodc-workflow",
+    impact: 5,
+  },
+  {
+    id: "smart-interview-coach",
+    title: "Smart Interview Coach",
+    date: "Nov 2023 – Feb 2024 · Septem Systems",
+    tags: ["Software"],
+    blurb:
+      "Interview-practice app covering question banks, session tracking, and feedback flows.",
+    problem:
+      "Candidates preparing for technical interviews need a structured place to practice questions and review how a session went.",
+    approach:
+      "Built the full-stack tool at Septem Systems with React, Ant Design, Redux, NestJS, and MySQL.",
+    result:
+      "Internal interview-preparation product covering banks, sessions, and feedback.",
+    stack: ["TypeScript", "React", "Ant Design", "Redux", "NestJS", "MySQL"],
+    sourceHref: null,
+    caseStudyHref: "/projects/smart-interview-coach",
+    impact: 4,
+  },
+  {
+    id: "industrial-asrs",
+    title: "Industrial ASRS Commissioning",
+    date: "Aug 2021 – Aug 2023 · Style Textile",
+    tags: ["Robotics"],
+    blurb:
+      "Plant-floor commissioning of an automated storage and retrieval system.",
+    problem:
+      "An automated warehouse only works if PLC logic, I/O, and electrical control stay in agreement during commissioning and live faults.",
+    approach:
+      "Analyzed PLC logic, electrical schematics, and I/O behavior; validated hardware-control integration during ASRS deployment and handled emergency electrical/control maintenance.",
+    result:
+      "Commissioned and maintained the ASRS on the plant floor at Style Textile.",
+    stack: [
+      "PLC Programming",
+      "Electrical Schematics",
+      "I/O Troubleshooting",
+      "ASRS",
+      "Industrial Automation",
+    ],
+    sourceHref: null,
+    caseStudyHref: "/projects/industrial-asrs",
+    impact: 3,
+  },
+  {
+    id: "line-following-robot",
+    title: "Line Following Robot",
+    date: "UET Lahore · Competition",
+    tags: ["Robotics"],
+    blurb:
+      "Autonomous line-following robot built for an institutional robotics competition.",
+    problem:
+      "The robot had to track a line reliably using onboard sensing, not a remote driver.",
+    approach:
+      "Combined sensor feedback with closed-loop motor control on an embedded platform.",
+    result:
+      "Winner, Line Following Robot, institutional robotics competitions.",
+    stack: ["Embedded Systems", "Sensor Integration", "Motor Control"],
+    sourceHref: null,
+    caseStudyHref: "/projects/line-following-robot",
+    impact: 2,
+  },
+  {
+    id: "robowars",
+    title: "RoboWars",
+    date: "UET Lahore · Competition",
+    tags: ["Robotics"],
+    blurb:
+      "Combat robot built for an institutional RoboWars competition.",
+    problem:
+      "A combat platform has to drive, survive contact, and stay controllable under impact.",
+    approach:
+      "Built and piloted the robot covering mechanical design, drive control, and durability.",
+    result: "Winner, RoboWars, institutional robotics competitions.",
+    stack: ["Embedded Systems", "Motor Control", "Mechanical Design"],
+    sourceHref: null,
+    caseStudyHref: "/projects/robowars",
     impact: 1,
   },
 ];
@@ -364,89 +581,202 @@ export const EDUCATION = {
 export const RETAIL_CASE_STUDY = {
   eyebrow: "Case Study · Senior Thesis · AI & Robotics Lab, UET Lahore",
   title: "Automatic Retail Checkout V-3",
-  lead: "A barcode-free checkout system that detects, counts, and bills retail products from a conveyor-mounted camera, no scanner, no cashier.",
+  lead: "A barcode-free checkout system that detects, counts, and bills retail products from a conveyor-mounted camera. No scanner. No cashier.",
   meta: [
     { label: "Role", value: "Vision & ML lead, hardware co-design" },
-    { label: "Team", value: "3 engineers · Advisor: Muhammad Rzi Abbas" },
-    { label: "Timeline", value: "Final year, 2020 – 2021" },
-    { label: "Stack", value: "Python · OpenCV · YOLOv4-tiny · Arduino" },
+    { label: "Team", value: "Moneeb Hussain, Arbaz Ch., Khawaja Daniyal" },
+    { label: "Advisor", value: "Muhammad Rzi Abbas" },
   ],
-  placeholders: [
-    { label: "// conveyor rig + rotary indexer, photo" },
-    { label: "// billing GUI, screen capture" },
-  ],
+  figures: {
+    hardware: {
+      src: "/images/projects/retail-checkout/hardware-setup.png",
+      alt: "Green conveyor belt with a wooden capture hood, laptop on top, and an HP LaserJet printer beside the rig.",
+      caption:
+        "The V-3 rig in the lab: motorised conveyor, wooden hood with LED lighting, control laptop, and HP LaserJet for printed bills.",
+      aspect: "4 / 3",
+    },
+    team: {
+      src: "/images/projects/retail-checkout/thesis-team.jpg",
+      alt: "Three thesis teammates standing beside the conveyor in the AI and Robotics Lab at UET Lahore.",
+      caption:
+        "Thesis team at the AI & Robotics Lab, UET Lahore, with the conveyor at left. Photo: AKS UET Photography Society.",
+      aspect: "16 / 10",
+    },
+    virtualLine: {
+      src: "/images/projects/retail-checkout/virtual-line-counting.png",
+      alt: "Webcam frame with a green virtual counting line. An SMD bulb is labeled above the line and a Mayfair Care pack is crossing it.",
+      caption:
+        "The counting trick. A green virtual line sits across the frame. When a box crosses it, that SKU is counted once. The belt never stops.",
+      aspect: "4 / 3",
+    },
+    detection: {
+      src: "/images/projects/retail-checkout/detection-multi.png",
+      alt: "YOLOv4-tiny bounding boxes on several biscuit, tea, and snack packs at once on the conveyor.",
+      caption:
+        "Multi-product detection on a running belt. V-3 no longer needed a single, centered item the way V-2 did.",
+      aspect: "4 / 3",
+    },
+    billing: {
+      src: "/images/projects/retail-checkout/gui-billing.png",
+      alt: "Tkinter GUI with live product detections on the left and a five-line bill totaling 445 on the right.",
+      caption:
+        "Tkinter billing view: live detections on the left, running line items and total on the right, Checkout and QUIT at the bottom.",
+      aspect: "16 / 9",
+    },
+    labelimg: {
+      src: "/images/projects/retail-checkout/labelimg.png",
+      alt: "LabelImg with bounding boxes on four snack packs on the conveyor.",
+      caption:
+        "Every training frame was labeled by hand in LabelImg, on the same conveyor the detector would later see.",
+      aspect: "16 / 9",
+    },
+    labelimgBoxes: {
+      src: "/images/projects/retail-checkout/labelimg-boxes.png",
+      alt: "LabelImg class list and file list for conveyor-captured product images.",
+      caption:
+        "Class list and capture folder for the custom set: about 3,500 frames across 70 retail classes.",
+      aspect: "16 / 9",
+    },
+    indexer: {
+      src: "/images/projects/retail-checkout/rotary-indexer.png",
+      alt: "Rotary indexer: a round aluminum plate on a black frame with a stepper motor housing.",
+      caption:
+        "Rotary indexer for new SKUs, not for checkout. Aluminum plate, angle-iron frame, NEMA 17 stepper. Turn, photograph, label, retrain.",
+      aspect: "16 / 10",
+    },
+    circuit: {
+      src: "/images/projects/retail-checkout/indexer-circuit.png",
+      alt: "Circuit diagram of an Arduino Uno wired to a stepper driver and NEMA 17 motor, powered at 8 to 32 volts, 2 amps.",
+      caption:
+        "Thesis Figure 28. Arduino Uno, stepper driver, and NEMA 17 wiring for the indexer. Supply: 8-32 V, 2 A.",
+      contain: true,
+      aspect: "4 / 3",
+    },
+  } satisfies Record<string, CaseStudyFigure>,
   heroStats: [
-    { value: "98.78%", label: "Detection accuracy" },
+    { value: "98.78%", label: "Lab detection accuracy" },
     { value: "4s → <1s", label: "Per-item checkout time" },
     { value: "3,500 / 70", label: "Training images / classes" },
   ] satisfies HandoffStat[],
   problem: [
-    "Supermarket checkout lines run on barcode scanners: an operator locates each barcode by hand and hovers a scanner over it. It works, but it is slow, and every extra second in the queue compounds at scale.",
-    "The brief we set for ourselves: identify retail items and generate a bill without a barcode scanner or a skilled operator, reducing dependency on trained staff while speeding up the process.",
+    "Supermarket checkout still runs on barcodes. An operator finds each code by hand and hovers a scanner over it. It works, but it is slow, and every extra second in the queue compounds at scale.",
+    "The brief we set: identify retail items and generate a bill without a barcode scanner or a skilled operator. Faster checkouts, less dependence on trained staff.",
   ],
   objectives: [
     {
-      title: "Object Identification",
-      text: "Accurately identify retail items without a barcode.",
+      title: "Object identification",
+      text: "Name retail items from a camera, with no barcode in the loop.",
     },
     {
       title: "Autonomy",
-      text: "Reduce dependency on a trained operator for checkouts.",
+      text: "Cut the need for a trained operator at the till.",
     },
     {
-      title: "Time Saving",
-      text: "Cut per-item checkout time from roughly four seconds.",
+      title: "Time saving",
+      text: "Bring per-item checkout time down from roughly four seconds.",
     },
     {
       title: "Extensibility",
-      text: "Add new products to the database without retraining from scratch.",
+      text: "Add a new product without rebuilding the whole dataset from scratch.",
     },
   ] satisfies CaseStudyObjective[],
   approachIntro:
-    "We proposed a deep-learning alternative: a CNN-based detector paired with a simple image-acquisition rig, replacing the barcode scan with a camera and a model.",
+    "V-3 replaces the barcode with a camera and a detector. Products ride a lit conveyor. YOLOv4-tiny names them. A virtual green line counts them. A desktop GUI prints the bill.",
+  pipeline: [
+    {
+      mark: "01",
+      title: "Conveyor",
+      text: "Items ride a running belt under a wooden hood with LED lighting.",
+    },
+    {
+      mark: "02",
+      title: "Camera",
+      text: "A fixed Logitech C310 looks down from inside the hood.",
+    },
+    {
+      mark: "03",
+      title: "Detect",
+      text: "YOLOv4-tiny (Darknet) draws a box and class name on each SKU.",
+    },
+    {
+      mark: "04",
+      title: "Count",
+      text: "A virtual green line counts an item once as its box crosses. The belt stays moving.",
+    },
+    {
+      mark: "05",
+      title: "Bill",
+      text: "Tkinter tallies prices and prints the receipt on an HP LaserJet.",
+    },
+  ] satisfies CaseStudyPipelineStep[],
+  countingInsight:
+    "V-2 used a laser trigger that halted the belt for about three seconds so one centered item could be photographed. V-3 deleted that pause. Counting is a line in software. If the box crosses it, the SKU goes on the bill.",
+  hardwareIntro:
+    "The checkout path is mechanical only in the sense that a belt and a hood present a repeatable scene to the camera. The Arduino and stepper live on a separate machine: a rotary indexer used when a new product has to enter the catalog.",
   hardware: [
-    "Conveyor belt with a wooden hood, LED strip lighting, and a fixed image-acquisition camera to keep exposure consistent.",
-    "A rotary indexer (angle iron, aluminum plate, NEMA 17 stepper, iron rod and flexible coupling) built to automate capturing and labeling images of new products for retraining.",
-    "Thermal receipt printer wired into the GUI for automatic billing output.",
+    "Green steel conveyor with a wooden capture hood, LED strip lighting, and a fixed Logitech C310 webcam.",
+    "HP LaserJet beside the rig, driven from the billing GUI once Checkout is pressed.",
+    "Rotary indexer (aluminum plate, angle iron, NEMA 17, iron rod and flexible coupling) to photograph new products for retraining. It is not what sequences items at checkout.",
   ],
   software: [
-    "Custom dataset: 3,500 conveyor-captured images across 70 retail-product classes, trained on products' logo-visible faces only.",
-    "YOLOv4-tiny (Darknet) for detection and counting, tuned to track items as they move rather than requiring the belt to stop.",
-    "OpenCV inference pipeline feeding a billing GUI that tallies detected items and prints a receipt.",
+    "Custom set: about 3,500 conveyor frames, 70 classes, labeled in LabelImg on logo-visible faces only.",
+    "YOLOv4-tiny on Darknet, chosen over full YOLOv4 so inference stayed under a second on lab hardware.",
+    "OpenCV on the PC feeding a Tkinter GUI: live feed, running bill, Checkout, Quit, print.",
   ],
   v2Intro:
-    "V-3's job was to remove the constraints that made the earlier prototype impractical:",
+    "V-3's job was to drop the constraints that made the earlier prototype impractical on a real belt:",
   improvements: [
     {
-      from: "One box at a time, centered on belt",
-      to: "Multiple boxes, placed anywhere on the belt",
+      from: "One box at a time, centered on the belt",
+      to: "Several boxes, placed anywhere on the belt",
     },
     {
-      from: "Conveyor must stop per item",
-      to: "Detects on a running conveyor",
+      from: "Laser halt, about 3 seconds per item",
+      to: "Virtual counting line, belt keeps running",
     },
     {
-      from: "No way to add new products",
-      to: "Rotary indexer auto-captures & labels new items",
+      from: "No path to add new products",
+      to: "Indexer captures and labels new SKUs",
     },
     {
-      from: "~4s per item",
-      to: "<1s per item, multiple items at once",
+      from: "About 4 seconds per item",
+      to: "Under 1 second, several items at once",
     },
   ] satisfies CaseStudyImprovement[],
   result: [
-    "In controlled testing, the system reached 98.78% detection accuracy across the 70 trained classes, and cut per-item checkout time from roughly four seconds to under one — while handling multiple products at once, placed anywhere on the belt instead of a fixed center point.",
-    "Working assumptions we scoped around: no occlusion between stacked items, a closed product catalog matching training data, and packaging oriented so identifying features (logo, print) face the camera.",
+    "In controlled testing, each trained item ran the conveyor ten times. The system reached 98.78% detection accuracy across the 70 classes, and cut per-item checkout time from roughly four seconds to under one, while handling multiple products at once instead of a single center point.",
+    "Read that number as a lab result under a closed catalog and controlled light, not as a supermarket benchmark.",
   ],
   resultHighlight: "98.78% detection accuracy",
+  assumptions: [
+    {
+      title: "No stacking",
+      text: "Items must not occlude each other. Overlap on the belt is already hard. Stacks were out of scope.",
+    },
+    {
+      title: "Closed catalog",
+      text: "Only the 70 trained classes are in play. An unknown SKU is not a graceful miss. It is outside the test.",
+    },
+    {
+      title: "Logo facing the camera",
+      text: "Training used the printed face of each pack. A blank or inverted face was not part of the evaluation.",
+    },
+  ] satisfies CaseStudyAssumption[],
   stack: [
     "Python",
     "OpenCV",
     "YOLOv4-tiny",
     "Darknet",
+    "LabelImg",
+    "Tkinter",
     "Arduino Uno",
-    "NEMA 17 Stepper",
-    "Tkinter GUI",
+    "NEMA 17",
+    "Logitech C310",
+    "HP LaserJet",
   ],
+  ask: {
+    title: "Questions about this system?",
+    lead: "Happy to walk through the architecture, trade-offs, or limitations in detail.",
+  },
   sourceHref: "https://github.com/Moneeb-Hussain",
 } as const;

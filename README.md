@@ -1,4 +1,4 @@
-# Moneeb Hussain — Portfolio
+# Moneeb Hussain - Portfolio
 
 Research-oriented engineering portfolio for **Moneeb Hussain**: AI systems, computer vision, multimodal AI, trustworthy decision workflows, production software, and hardware–software integration.
 
@@ -94,8 +94,8 @@ Edit `profile.metrics` in `src/content/profile.ts`. Every value must remain evid
 
 ## Evidence & strategy docs
 
-- `PORTFOLIO_CONTENT_AUDIT.md` — verified inventory, contradictions, privacy notes
-- `PORTFOLIO_STRATEGY.md` — audiences, IA, visual direction, risks
+- `PORTFOLIO_CONTENT_AUDIT.md` - verified inventory, contradictions, privacy notes
+- `PORTFOLIO_STRATEGY.md` - audiences, IA, visual direction, risks
 
 Source materials (CVs, FYP, certificates) remain in the repo for authoring. **Do not** copy passport or identity documents into `public/`.
 
@@ -106,7 +106,7 @@ None required for the static portfolio.
 Optional later:
 
 ```bash
-# .env.local — analytics only if explicitly approved
+# .env.local - analytics only if explicitly approved
 NEXT_PUBLIC_SITE_URL=https://your-domain.com
 ```
 

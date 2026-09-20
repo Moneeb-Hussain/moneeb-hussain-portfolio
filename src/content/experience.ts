@@ -11,7 +11,7 @@ export const experience: ExperienceEntry[] = [
     organization: "iCodeGuru",
     role: "Trainer & Moderator",
     period: "Feb 2026 – Present",
-    location: "Remote — Silicon Valley, USA",
+    location: "Remote - Silicon Valley, USA",
     summary:
       "Teaching a Python-to-GenAI curriculum to a large remote cohort, covering programming fundamentals through applied AI/ML.",
     highlights: [
@@ -29,7 +29,7 @@ export const experience: ExperienceEntry[] = [
     period: "Oct 2023 – Present",
     location: "Lahore, Pakistan",
     summary:
-      "Building production frontend and backend systems — REST APIs, secure workflows, and CI/CD pipelines deployed on GCP — across several client engagements.",
+      "Building production frontend and backend systems - REST APIs, secure workflows, and CI/CD pipelines deployed on GCP - across several client engagements.",
     highlights: [
       "Improved a production API's response time from 3.9s to 1.2s through SQL optimisation and refactoring",
       "Recognised as Employee of the Quarter",

@@ -41,7 +41,7 @@ export function ProjectMetadata({ project }: ProjectMetadataProps) {
                 <span>
                   {member.name}
                   {member.role ? (
-                    <span className="text-text-secondary"> — {member.role}</span>
+                    <span className="text-text-secondary"> - {member.role}</span>
                   ) : null}
                 </span>
               </li>

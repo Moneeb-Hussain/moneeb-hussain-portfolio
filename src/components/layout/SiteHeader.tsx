@@ -50,7 +50,7 @@ export function SiteHeader() {
         <Link
           href="/"
           className="flex min-h-11 items-center gap-2 rounded-md font-mono text-sm font-semibold tracking-tight text-text"
-          aria-label="Moneeb Hussain — home"
+          aria-label="Moneeb Hussain - home"
         >
           <span className="flex size-9 items-center justify-center rounded-md bg-dark-section text-surface">
             MH

@@ -6,7 +6,7 @@ const principles = [
     icon: Target,
     title: "Constrain the problem before scaling it",
     description:
-      "The retail checkout thesis worked because the physical rig guaranteed one item at a time — the vision model only had to be confident about a narrow, well-defined problem. Scope discipline usually beats a bigger model.",
+      "The retail checkout thesis worked because the physical rig guaranteed one item at a time - the vision model only had to be confident about a narrow, well-defined problem. Scope discipline usually beats a bigger model.",
   },
   {
     icon: Users,
@@ -24,7 +24,7 @@ const principles = [
     icon: Layers,
     title: "Match training data to deployment reality",
     description:
-      "The retail checkout dataset was captured on the exact conveyor rig it would run on, not sourced from generic product photography — closing the gap between training and deployment distributions.",
+      "The retail checkout dataset was captured on the exact conveyor rig it would run on, not sourced from generic product photography - closing the gap between training and deployment distributions.",
   },
 ];
 
@@ -36,7 +36,7 @@ export function SystemsPhilosophy() {
           id="philosophy-heading"
           eyebrow="Engineering principles"
           title="How these systems are meant to fail safely"
-          description="Patterns that show up repeatedly across the projects below — not abstract values, but decisions that were actually made and can be pointed to."
+          description="Patterns that show up repeatedly across the projects below - not abstract values, but decisions that were actually made and can be pointed to."
         />
 
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
