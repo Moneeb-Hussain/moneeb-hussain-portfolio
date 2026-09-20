@@ -30,30 +30,40 @@ function FlagshipStar() {
 function ProjectLinks({
   project,
   showCaseStudy = true,
+  emphasized = false,
 }: {
   project: HandoffProject;
   showCaseStudy?: boolean;
+  emphasized?: boolean;
 }) {
   const caseStudyHref = showCaseStudy ? project.caseStudyHref : null;
   if (!caseStudyHref && !project.sourceHref) return null;
 
   return (
-    <div className="pf-link-row">
-      {caseStudyHref ? (
-        <Link href={caseStudyHref} className="pf-case-link">
-          Read full case study →
-        </Link>
+    <div className={emphasized ? "pf-link-row is-emphasized" : "pf-link-row"}>
+      {emphasized && caseStudyHref ? (
+        <p className="pf-case-invite">
+          Walk through the hardware setup, the detection pipeline, and the lab results.
+        </p>
       ) : null}
-      {project.sourceHref ? (
-        <a
-          href={project.sourceHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="pf-source-link"
-        >
-          Source Code ↗
-        </a>
-      ) : null}
+      <div className="pf-link-actions">
+        {caseStudyHref ? (
+          <Link href={caseStudyHref} className="pf-case-link">
+            Open the full case study
+            <span aria-hidden="true"> →</span>
+          </Link>
+        ) : null}
+        {project.sourceHref ? (
+          <a
+            href={project.sourceHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pf-source-link"
+          >
+            Source Code ↗
+          </a>
+        ) : null}
+      </div>
     </div>
   );
 }
@@ -194,7 +204,7 @@ export function FeaturedProjects() {
                         </span>
                       ))}
                     </div>
-                    <ProjectLinks project={project} />
+                    <ProjectLinks project={project} emphasized={flagship} />
                   </div>
                 ) : null}
               </article>
