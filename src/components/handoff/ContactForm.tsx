@@ -18,23 +18,50 @@ export function ContactForm() {
   const copy = CONTACT_FORM;
   const [values, setValues] = useState(INITIAL);
   const [status, setStatus] = useState<FormStatus>("idle");
+  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (status === "sending") return;
 
     setStatus("sending");
+
+    if (values.company.trim()) {
+      setStatus("success");
+      setValues(INITIAL);
+      return;
+    }
+
+    if (!accessKey) {
+      setStatus("error");
+      return;
+    }
+
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `Portfolio message from ${values.name.trim()}`,
+          from_name: values.name.trim(),
+          name: values.name.trim(),
+          email: values.email.trim(),
+          linkedin: values.linkedin.trim() || "Not provided",
+          message: values.message.trim(),
+          replyto: values.email.trim(),
+        }),
       });
-      const payload = (await response.json()) as { ok?: boolean };
-      setStatus(response.ok && payload.ok ? "success" : "error");
-      if (response.ok && payload.ok) {
+      const payload = (await response.json()) as { success?: boolean };
+      if (response.ok && payload.success) {
+        setStatus("success");
         setValues(INITIAL);
+        return;
       }
+      setStatus("error");
     } catch {
       setStatus("error");
     }
