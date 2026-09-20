@@ -8,6 +8,7 @@ export function middleware(request: NextRequest) {
 
   if (
     pathname.startsWith("/_next") ||
+    pathname.startsWith("/_vercel") ||
     pathname.startsWith("/api") ||
     pathname === "/manifest.webmanifest" ||
     pathname === "/sitemap.xml" ||
