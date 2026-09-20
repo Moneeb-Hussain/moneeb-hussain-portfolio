@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono, Inter, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { buildDefaultMetadata } from "@/lib/metadata";
 import { buildPersonJsonLd, buildWebSiteJsonLd } from "@/lib/structured-data";
 import { THEME_BOOTSTRAP_SCRIPT } from "@/lib/theme-script";
@@ -54,6 +55,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
         />
+        <Analytics />
       </body>
     </html>
   );

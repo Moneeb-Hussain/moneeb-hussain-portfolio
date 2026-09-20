@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { track } from "@vercel/analytics";
 import { handoffNav, handoffProfile } from "@/content/handoff";
 import { ThemeToggle } from "./theme";
 
@@ -36,6 +37,7 @@ export function HomeNav() {
             href={handoffProfile.resumeHref}
             download={handoffProfile.resumeDownloadName}
             className="pf-resume"
+            onClick={() => track("Resume Download")}
           >
             Résumé ↓
           </a>
