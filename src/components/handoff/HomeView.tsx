@@ -240,10 +240,6 @@ export function HomeView() {
               <div className="pf-edu-degree">{EDUCATION.degree}</div>
               <div className="pf-edu-tools">{EDUCATION.tools}</div>
             </div>
-            <div className="pf-edu-meta">
-              <div className="pf-edu-years">{EDUCATION.years}</div>
-              <div className="pf-edu-cgpa">{EDUCATION.cgpa}</div>
-            </div>
           </div>
         </section>
       </main>

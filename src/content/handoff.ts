@@ -119,7 +119,8 @@ export const handoffProfile = {
   headshotSrc: "/assets/headshot.png",
   headshotAlt: "Portrait of Moneeb Hussain",
   footerHeading: "Let's build something.",
-  footerLead: "Have a role, a project, or a question? Send a note. I reply myself.",
+  footerLead:
+    "Aspiring researcher in computer vision and intelligent systems. Open to graduate research, collaborations, and applied AI opportunities.",
   copyright: "© 2026 Moneeb Hussain",
 } as const;
 
@@ -254,7 +255,7 @@ export const PROJECTS: HandoffProject[] = [
     stack: ["FastAPI", "React", "Tailwind CSS", "Supabase", "OpenAI", "Render"],
     sourceHref:
       "https://github.com/Moneeb-Hussain/real-time-hospital-intelligence-platform",
-    caseStudyHref: "/projects/aegisops-ai",
+    caseStudyHref: null,
     impact: 12,
   },
   {
@@ -273,7 +274,7 @@ export const PROJECTS: HandoffProject[] = [
       "Hackathon research prototype of a trust-oriented screening pipeline. Not investment advice; no customers or production deployment claimed.",
     stack: ["Next.js", "FastAPI", "SQLite", "OpenAI", "Multi-agent pipeline"],
     sourceHref: "https://github.com/Moneeb-Hussain/venture-intelligence",
-    caseStudyHref: "/projects/firstcheck-ai",
+    caseStudyHref: null,
     impact: 11,
   },
   {
@@ -328,7 +329,7 @@ export const PROJECTS: HandoffProject[] = [
       "Shipped as a production client engagement. Case details stay sanitised.",
     stack: ["Nuxt 2", "Vuex", "Node.js", "MySQL"],
     sourceHref: null,
-    caseStudyHref: "/projects/esgtree",
+    caseStudyHref: null,
     impact: 6,
   },
   {
@@ -346,7 +347,7 @@ export const PROJECTS: HandoffProject[] = [
       "Production client engagement at Septem Systems. Process detail and case records are not published.",
     stack: ["TypeScript", "NestJS", "Vue 3", "Pinia", "Vuetify", "MySQL"],
     sourceHref: null,
-    caseStudyHref: "/projects/unodc-workflow",
+    caseStudyHref: null,
     impact: 5,
   },
   {
@@ -364,7 +365,7 @@ export const PROJECTS: HandoffProject[] = [
       "Internal interview-preparation product covering banks, sessions, and feedback.",
     stack: ["TypeScript", "React", "Ant Design", "Redux", "NestJS", "MySQL"],
     sourceHref: null,
-    caseStudyHref: "/projects/smart-interview-coach",
+    caseStudyHref: null,
     impact: 4,
   },
   {
@@ -388,7 +389,7 @@ export const PROJECTS: HandoffProject[] = [
       "Industrial Automation",
     ],
     sourceHref: null,
-    caseStudyHref: "/projects/industrial-asrs",
+    caseStudyHref: null,
     impact: 3,
   },
   {
@@ -406,7 +407,7 @@ export const PROJECTS: HandoffProject[] = [
       "Winner, Line Following Robot, institutional robotics competitions.",
     stack: ["Embedded Systems", "Sensor Integration", "Motor Control"],
     sourceHref: null,
-    caseStudyHref: "/projects/line-following-robot",
+    caseStudyHref: null,
     impact: 2,
   },
   {
@@ -423,7 +424,7 @@ export const PROJECTS: HandoffProject[] = [
     result: "Winner, RoboWars, institutional robotics competitions.",
     stack: ["Embedded Systems", "Motor Control", "Mechanical Design"],
     sourceHref: null,
-    caseStudyHref: "/projects/robowars",
+    caseStudyHref: null,
     impact: 1,
   },
 ];
@@ -449,16 +450,6 @@ export const PRINCIPLES: HandoffPrinciple[] = [
 
 export const EXPERIENCE: HandoffExperience[] = [
   {
-    period: "Oct 2023 – Present",
-    role: "Software Engineer II",
-    org: "Septem Systems · Lahore, Pakistan",
-    bullets: [
-      "Built production workflows across front-end, backend APIs, secure workflows, CI/CD, and GCP deployments.",
-      "Reduced API latency from 3.9s to 1.2s through SQL optimization, legacy refactoring, and debugging.",
-      "Recognized as Employee of the Quarter for problem-solving and reliable delivery.",
-    ],
-  },
-  {
     period: "Feb 2026 – Present",
     role: "Technical Trainer & Moderator",
     org: "iCodeGuru · Remote, Silicon Valley",
@@ -466,6 +457,16 @@ export const EXPERIENCE: HandoffExperience[] = [
       "Mentored 80+ underprivileged learners across programming, data structures, and AI-focused training.",
       "Co-designed a 6-week Python-to-GenAI curriculum for a cohort of 150+ enrolled learners.",
       "Designed a two-part MATLAB/Simulink control-systems workshop, from PID fundamentals to closed-loop robustness.",
+    ],
+  },
+  {
+    period: "Oct 2023 – Present",
+    role: "Software Engineer II",
+    org: "Septem Systems · Lahore, Pakistan",
+    bullets: [
+      "Built production workflows across front-end, backend APIs, secure workflows, CI/CD, and GCP deployments.",
+      "Reduced API latency from 3.9s to 1.2s through SQL optimization, legacy refactoring, and debugging.",
+      "Recognized as Employee of the Quarter for problem-solving and reliable delivery.",
     ],
   },
   {

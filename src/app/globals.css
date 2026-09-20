@@ -136,6 +136,7 @@ button {
   background: var(--pf-bg);
   color: var(--pf-text);
   font-family: var(--pf-sans);
+  font-size: 17px;
   line-height: 1.5;
   color-scheme: dark;
   -webkit-font-smoothing: antialiased;
@@ -216,7 +217,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-lead {
-  font-size: 15.5px;
+  font-size: 18px;
   color: var(--pf-text-dim);
   max-width: 680px;
   margin: 14px 0 0;
@@ -224,7 +225,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-btn-primary {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--pf-accent-on);
   background: var(--pf-accent);
@@ -245,7 +246,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-btn-secondary {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--pf-text);
   background: transparent;
@@ -302,7 +303,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-nav-link {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--pf-text-dim);
   font-weight: 500;
 }
@@ -325,7 +326,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-resume {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--pf-accent-on);
   background: var(--pf-accent);
@@ -398,7 +399,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-hero-statement {
-  font-size: 23px;
+  font-size: 25px;
   font-weight: 700;
   color: var(--pf-text);
   max-width: 560px;
@@ -408,7 +409,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-hero-lead {
-  font-size: 16.5px;
+  font-size: 18px;
   color: var(--pf-text-dim);
   max-width: 560px;
   margin: 0 0 32px;
@@ -463,7 +464,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-stat-label {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--pf-text-dim);
 }
 
@@ -490,7 +491,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-chip {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   padding: 8px 16px;
   border-radius: 20px;
@@ -520,7 +521,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-sort-btn {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   padding: 6px 14px;
   border-radius: 16px;
@@ -583,7 +584,7 @@ html[data-theme="light"] .pf {
 
 .pf-tag-pill {
   font-family: var(--pf-mono);
-  font-size: 11px;
+  font-size: 12px;
   color: var(--pf-accent);
   border: 1px solid var(--pf-border);
   padding: 2px 9px;
@@ -591,7 +592,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-project-title {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 700;
   margin: 0 0 8px;
   display: flex;
@@ -619,7 +620,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-project-blurb {
-  font-size: 15px;
+  font-size: 18px;
   color: var(--pf-text-dim);
   margin: 0;
   max-width: 640px;
@@ -661,14 +662,14 @@ html[data-theme="light"] .pf {
 }
 
 .pf-more-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   margin: 0;
   line-height: 1.3;
 }
 
 .pf-more-blurb {
-  font-size: 14px;
+  font-size: 17px;
   color: var(--pf-text-dim);
   margin: 0;
   line-height: 1.55;
@@ -677,7 +678,7 @@ html[data-theme="light"] .pf {
 
 .pf-block-label {
   font-family: var(--pf-mono);
-  font-size: 11px;
+  font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--pf-accent);
@@ -685,7 +686,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-block-text {
-  font-size: 14.5px;
+  font-size: 18px;
   color: var(--pf-text-dim);
   margin: 0;
   line-height: 1.6;
@@ -697,7 +698,7 @@ html[data-theme="light"] .pf {
 
 .pf-stack-pill {
   font-family: var(--pf-mono);
-  font-size: 11.5px;
+  font-size: 13px;
   color: var(--pf-text-dim);
   background: var(--pf-bg-alt-2);
   padding: 4px 10px;
@@ -711,13 +712,13 @@ html[data-theme="light"] .pf {
 }
 
 .pf-case-link {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--pf-accent);
 }
 
 .pf-source-link {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--pf-text-dim);
 }
@@ -750,13 +751,13 @@ html[data-theme="light"] .pf {
 }
 
 .pf-principle-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   margin-bottom: 6px;
 }
 
 .pf-principle-text {
-  font-size: 14px;
+  font-size: 17px;
   color: var(--pf-text-dim);
   margin: 0;
   line-height: 1.65;
@@ -810,13 +811,13 @@ html[data-theme="light"] .pf {
 }
 
 .pf-exp-role {
-  font-size: 19px;
+  font-size: 21px;
   font-weight: 700;
   margin: 0 0 4px;
 }
 
 .pf-exp-org {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--pf-accent);
   font-weight: 600;
   margin-bottom: 12px;
@@ -831,7 +832,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-exp-list li {
-  font-size: 14.5px;
+  font-size: 17px;
   color: var(--pf-text-dim);
   line-height: 1.6;
 }
@@ -866,7 +867,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-skill-chip {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--pf-text);
   background: var(--pf-bg-alt-2);
   padding: 6px 12px;
@@ -890,14 +891,14 @@ html[data-theme="light"] .pf {
 }
 
 .pf-ri-title {
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 700;
   margin-bottom: 10px;
   line-height: 1.3;
 }
 
 .pf-ri-text {
-  font-size: 13.5px;
+  font-size: 16px;
   color: var(--pf-text-dim);
   margin: 0;
   line-height: 1.6;
@@ -926,7 +927,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-ri-qtext {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--pf-text);
   font-style: italic;
   line-height: 1.55;
@@ -979,7 +980,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-ach-featured-text {
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 600;
   color: var(--pf-text);
   margin: 0;
@@ -1026,7 +1027,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-ach-text {
-  font-size: 14.5px;
+  font-size: 17px;
   color: var(--pf-text-dim);
   margin: 0;
   line-height: 1.5;
@@ -1052,19 +1053,19 @@ html[data-theme="light"] .pf {
 }
 
 .pf-edu-school {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   margin: 0 0 6px;
 }
 
 .pf-edu-degree {
-  font-size: 14.5px;
+  font-size: 17px;
   color: var(--pf-text-dim);
   margin-bottom: 10px;
 }
 
 .pf-edu-tools {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--pf-text-faint);
 }
 
@@ -1105,7 +1106,7 @@ html[data-theme="light"] .pf {
 }
 
 .pf-footer-lead {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--pf-text-dim);
   margin: 0 0 40px;
 }
@@ -1155,14 +1156,14 @@ a.pf-contact-card:hover {
 
 .pf-contact-kicker {
   display: block;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--pf-text-faint);
   margin-bottom: 3px;
 }
 
 .pf-contact-value {
   display: block;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   word-break: break-word;
 }
@@ -1193,7 +1194,7 @@ a.pf-contact-card:hover {
 
 .pf-label {
   display: block;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   margin: 0 0 8px;
 }
@@ -1207,7 +1208,7 @@ a.pf-contact-card:hover {
   width: 100%;
   box-sizing: border-box;
   font: inherit;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--pf-text);
   background: var(--pf-bg);
   border: 1px solid var(--pf-border);
@@ -1249,7 +1250,7 @@ a.pf-contact-card:hover {
 .pf-form-status {
   min-height: 20px;
   margin: 12px 0 0;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.45;
 }
 
@@ -1293,7 +1294,7 @@ a.pf-contact-card:hover {
 }
 
 .pf-cs-lead {
-  font-size: 17px;
+  font-size: 19px;
   color: var(--pf-text-dim);
   max-width: 640px;
   margin: 0 0 36px;
@@ -1317,7 +1318,7 @@ a.pf-contact-card:hover {
 }
 
 .pf-cs-meta-val {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--pf-text);
   font-weight: 600;
 }
@@ -1358,7 +1359,7 @@ a.pf-contact-card:hover {
 }
 
 .pf-cs-caption {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.55;
   color: var(--pf-text-faint);
   margin: 10px 2px 0;
@@ -1401,13 +1402,13 @@ a.pf-contact-card:hover {
 }
 
 .pf-cs-pipe-title {
-  font-size: 14.5px;
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 6px;
 }
 
 .pf-cs-pipe-text {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--pf-text-dim);
   line-height: 1.5;
   margin: 0;
@@ -1435,7 +1436,7 @@ a.pf-contact-card:hover {
 
 .pf-cs-insight p {
   margin: 0;
-  font-size: 15px;
+  font-size: 17px;
   color: var(--pf-text-dim);
   line-height: 1.65;
 }
@@ -1455,14 +1456,14 @@ a.pf-contact-card:hover {
 }
 
 .pf-cs-assume-title {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 6px;
 }
 
 .pf-cs-assume-text {
   margin: 0;
-  font-size: 13.5px;
+  font-size: 16px;
   color: var(--pf-text-dim);
   line-height: 1.55;
 }
@@ -1527,7 +1528,7 @@ a.pf-contact-card:hover {
 }
 
 .pf-cs-body {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--pf-text-dim);
   line-height: 1.7;
   margin: 0 0 16px;
@@ -1562,13 +1563,13 @@ a.pf-contact-card:hover {
 }
 
 .pf-obj-title {
-  font-size: 14.5px;
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 3px;
 }
 
 .pf-obj-text {
-  font-size: 13.5px;
+  font-size: 16px;
   color: var(--pf-text-dim);
   line-height: 1.5;
 }
@@ -1605,7 +1606,7 @@ a.pf-contact-card:hover {
 }
 
 .pf-sub-list li {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--pf-text-dim);
   line-height: 1.6;
 }
@@ -1629,7 +1630,7 @@ a.pf-contact-card:hover {
 }
 
 .pf-compare-from {
-  font-size: 13.5px;
+  font-size: 16px;
   color: var(--pf-text-faint);
   text-decoration: line-through;
   text-decoration-color: var(--pf-border);
@@ -1643,7 +1644,7 @@ a.pf-contact-card:hover {
 }
 
 .pf-compare-to {
-  font-size: 13.5px;
+  font-size: 16px;
   color: var(--pf-text);
   font-weight: 600;
 }
@@ -1656,7 +1657,7 @@ a.pf-contact-card:hover {
 
 .pf-cs-pill {
   font-family: var(--pf-mono);
-  font-size: 12.5px;
+  font-size: 14px;
   color: var(--pf-text-dim);
   background: var(--pf-bg-alt-2);
   padding: 6px 13px;
@@ -1692,7 +1693,7 @@ a.pf-contact-card:hover {
 }
 
 .pf-cs-ask-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   margin: 0 0 6px;
   letter-spacing: -0.01em;
@@ -1700,14 +1701,14 @@ a.pf-contact-card:hover {
 
 .pf-cs-ask-lead {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--pf-text-dim);
   line-height: 1.5;
   max-width: 460px;
 }
 
 .pf-cs-ask-btn {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--pf-accent-on);
   background: var(--pf-accent);
@@ -1739,7 +1740,7 @@ a.pf-contact-card:hover {
 }
 
 .pf-cs-next a {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--pf-accent);
 }

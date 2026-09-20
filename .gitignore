@@ -75,6 +75,7 @@ next-env.d.ts
 
 # Common document / office formats anywhere in the repo
 *.pdf
+!/public/assets/Moneeb-Hussain-Resume.pdf
 *.doc
 *.docx
 *.ppt
