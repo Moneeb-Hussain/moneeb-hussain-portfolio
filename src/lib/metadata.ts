@@ -6,7 +6,7 @@ import { profile } from "@/content/profile";
  */
 export const siteConfig = {
   name: profile.name,
-  title: "Moneeb Hussain — AI Systems Engineer",
+  title: "Moneeb Hussain - AI Systems Engineer",
   description: profile.support,
   locale: "en_US",
   ogImage: "/og-image.png",
@@ -119,7 +119,7 @@ export function buildPageMetadata(options: PageMetadataOptions): Metadata {
 export function buildDefaultMetadata(): Metadata {
   return {
     ...buildPageMetadata({
-      title: `${siteConfig.name} — ${siteConfig.title.split("—")[1]?.trim() ?? ""}`.trim(),
+      title: siteConfig.title,
       description: siteConfig.description,
       path: "/",
     }),

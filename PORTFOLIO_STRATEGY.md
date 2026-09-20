@@ -1,4 +1,4 @@
-# Portfolio Strategy — Moneeb Hussain
+# Portfolio Strategy - Moneeb Hussain
 
 **Date:** 2026-08-04  
 **Companion:** `PORTFOLIO_CONTENT_AUDIT.md`
@@ -96,7 +96,7 @@ Public page focuses on durable themes (not a single lab pitch):
 4. Human-in-the-loop decision systems  
 5. Cyber-physical & intelligent automation  
 
-Modest language; questions to explore — not claimed contributions. No publications section.
+Modest language; questions to explore - not claimed contributions. No publications section.
 
 ---
 

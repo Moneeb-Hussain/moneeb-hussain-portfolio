@@ -2,7 +2,7 @@ import type { Project } from "./types";
 
 /**
  * Verified project inventory. Ranking, roles, and figures are sourced from
- * PORTFOLIO_CONTENT_AUDIT.md — the latest CV is the tiebreaker for any
+ * PORTFOLIO_CONTENT_AUDIT.md - the latest CV is the tiebreaker for any
  * conflicting older resume. Do not add metrics, demo URLs, or team credits
  * that aren't independently verifiable.
  */
@@ -14,7 +14,7 @@ export const projects: Project[] = [
     subtitle:
       "A vision-based, barcode-free checkout prototype integrating perception, motion, counting, and billing.",
     summary:
-      "Final-year thesis building a barcode-free retail checkout: a webcam and YOLOv4-tiny pipeline detects and counts products on a motorised conveyor and hands off to an Arduino-driven billing station.",
+      "Final-year thesis building a barcode-free retail checkout: a webcam and YOLOv4-tiny pipeline detects and counts products on a running conveyor, then a Tkinter GUI prints the bill.",
     status: "academic-thesis",
     featured: 1,
     role: "Computer Vision & Systems Engineer",
@@ -77,7 +77,7 @@ export const projects: Project[] = [
         id: "physical-architecture",
         heading: "Physical architecture",
         paragraphs: [
-          "A NEMA 17 stepper drives a small conveyor belt that carries products past a fixed webcam under a controlled LED lighting rig. A rotary indexer and an Arduino Uno coordinate motion so items pass the camera's field of view one at a time, which keeps detection stable and avoids overlapping bounding boxes.",
+          "A motorised conveyor carries products under a wooden hood with LED lighting and a fixed Logitech C310 webcam. V-3 counts on a running belt: a virtual green line in software, not a laser that stops the belt. A separate rotary indexer (NEMA 17 and Arduino Uno) is used to photograph new products for retraining, not to sequence checkout.",
         ],
       },
       {
@@ -98,21 +98,21 @@ export const projects: Project[] = [
         id: "hardware",
         heading: "Hardware integration",
         paragraphs: [
-          "The Arduino Uno handles low-level motor control for the conveyor and indexer, while a Tkinter desktop application on a connected PC runs inference, aggregates counts, and drives an HP LaserJet printer to produce a receipt — closing the loop from detection to billing.",
+          "A Tkinter desktop application on the PC runs inference, keeps a running bill, and drives an HP LaserJet to print the receipt. The Arduino Uno and NEMA 17 belong to the rotary indexer used when a new SKU has to enter the catalog.",
         ],
       },
       {
         id: "software",
         heading: "Software",
         paragraphs: [
-          "Python and OpenCV handle frame capture and preprocessing; the Tkinter UI presents live detections and a running bill to the operator. Serial communication over USB ties the vision PC to the Arduino so belt motion and detection stay synchronized.",
+          "Python and OpenCV handle frame capture and preprocessing. The Tkinter UI presents live detections and a running bill. A virtual counting line increments the bill when a box crosses it, so several SKUs can share a frame without the belt stopping.",
         ],
       },
       {
         id: "decisions",
         heading: "Key decisions",
         paragraphs: [
-          "The team chose a barcode-free approach specifically to explore whether computer vision alone could replace scanning for a constrained product set. Using YOLOv4-tiny instead of a heavier detector traded a small amount of accuracy for real-time performance on the lab's hardware — a trade-off validated by the sub-1-second per-item processing time.",
+          "The team chose a barcode-free approach specifically to explore whether computer vision alone could replace scanning for a constrained product set. Using YOLOv4-tiny instead of a heavier detector traded a small amount of accuracy for real-time performance on the lab's hardware - a trade-off validated by the sub-1-second per-item processing time.",
         ],
       },
       {
@@ -135,7 +135,7 @@ export const projects: Project[] = [
   // 2 ------------------------------------------------------------------
   {
     slug: "aegisops-ai",
-    title: "AegisOps AI — Digital Hospital Command Center",
+    title: "AegisOps AI - Digital Hospital Command Center",
     subtitle:
       "An operational decision-support prototype that scores urgency, tracks resources, and routes AI recommendations through human approval.",
     summary:
@@ -149,7 +149,7 @@ export const projects: Project[] = [
       github: "https://github.com/Moneeb-Hussain/real-time-hospital-intelligence-platform",
     },
     safetyNote:
-      "Operational decision support only — not a diagnostic or prescribing system. No real patient data is used or claimed. Every AI recommendation requires human approval, with a rule-based fallback available if AI services are unavailable.",
+      "Operational decision support only - not a diagnostic or prescribing system. No real patient data is used or claimed. Every AI recommendation requires human approval, with a rule-based fallback available if AI services are unavailable.",
     caseStudySlug: "aegisops-ai",
     relatedSlugs: ["firstcheck-ai", "livestock-ai"],
     order: 2,
@@ -195,7 +195,7 @@ export const projects: Project[] = [
   // 3 ------------------------------------------------------------------
   {
     slug: "firstcheck-ai",
-    title: "FirstCheck AI — VC Brain",
+    title: "FirstCheck AI - VC Brain",
     subtitle:
       "A multi-agent research pipeline that screens startups, drafts investment memos, and routes conclusions through adversarial review and human sign-off.",
     summary:
@@ -209,7 +209,7 @@ export const projects: Project[] = [
       github: "https://github.com/Moneeb-Hussain/venture-intelligence",
     },
     disclaimer:
-      "Research/hackathon prototype — not investment advice. No customers, returns, or production deployment are claimed.",
+      "Research/hackathon prototype - not investment advice. No customers, returns, or production deployment are claimed.",
     caseStudySlug: "firstcheck-ai",
     relatedSlugs: ["aegisops-ai", "pakai-capital"],
     order: 3,
@@ -218,28 +218,28 @@ export const projects: Project[] = [
         id: "problem",
         heading: "Problem",
         paragraphs: [
-          "Early-stage investment screening involves reading through founder materials, filings, and market context to produce a defensible view of a startup — work that's slow and inconsistent when done manually at volume. FirstCheck AI prototypes an assisted pipeline for that screening process.",
+          "Early-stage investment screening involves reading through founder materials, filings, and market context to produce a defensible view of a startup - work that's slow and inconsistent when done manually at volume. FirstCheck AI prototypes an assisted pipeline for that screening process.",
         ],
       },
       {
         id: "pipeline",
         heading: "Pipeline",
         paragraphs: [
-          "The system moves through discovery, extraction, screening, and diligence stages before drafting an investment memo. That memo then goes through an adversarial review step designed to challenge its own conclusions, followed by a verification pass, before a human makes the final call — with every step logged for audit.",
+          "The system moves through discovery, extraction, screening, and diligence stages before drafting an investment memo. That memo then goes through an adversarial review step designed to challenge its own conclusions, followed by a verification pass, before a human makes the final call - with every step logged for audit.",
         ],
       },
       {
         id: "role",
         heading: "My role",
         paragraphs: [
-          "I contributed to the backend and to the trustworthy-AI aspects of the pipeline — the parts of the system responsible for verification, adversarial review, and keeping a human in the decision loop rather than letting the pipeline auto-conclude.",
+          "I contributed to the backend and to the trustworthy-AI aspects of the pipeline - the parts of the system responsible for verification, adversarial review, and keeping a human in the decision loop rather than letting the pipeline auto-conclude.",
         ],
       },
       {
         id: "trust-by-design",
         heading: "Trust by design",
         paragraphs: [
-          "The adversarial review and verification stages exist specifically so a generated memo isn't taken at face value — the pipeline is designed to argue with itself before a human ever sees a final recommendation, and every recommendation requires a human decision before it's treated as final.",
+          "The adversarial review and verification stages exist specifically so a generated memo isn't taken at face value - the pipeline is designed to argue with itself before a human ever sees a final recommendation, and every recommendation requires a human decision before it's treated as final.",
         ],
       },
       {
@@ -259,14 +259,14 @@ export const projects: Project[] = [
     subtitle:
       "Multi-agent research assistants that synthesize market, filings, news, macro, and risk data for the Pakistan Stock Exchange.",
     summary:
-      "A hackathon prototype where LLM-driven agents each specialize in a data domain — market data, filings, news, macro, and risk — to assemble a combined research view of PSX-listed activity.",
+      "A hackathon prototype where LLM-driven agents each specialize in a data domain - market data, filings, news, macro, and risk - to assemble a combined research view of PSX-listed activity.",
     status: "hackathon-prototype",
     role: "AI Systems Developer",
     tech: ["Next.js", "FastAPI", "Python", "LLM Agents"],
     links: {
       github: "https://github.com/abdulrehman-work/psx-ai-trading-agents-hackathon",
     },
-    disclaimer: "Research prototype — not financial advice.",
+    disclaimer: "Research prototype - not financial advice.",
     relatedSlugs: ["firstcheck-ai", "livestock-ai"],
     order: 4,
   },
@@ -278,7 +278,7 @@ export const projects: Project[] = [
     subtitle:
       "A multimodal assistant that helps farmers triage livestock symptoms via text, voice, and images, with guidance toward professional care when needed.",
     summary:
-      "Led a hackathon team building a livestock health assistant: farmers describe or photograph a symptom and the system responds with guidance and, where appropriate, an escalation path — not a diagnosis.",
+      "Led a hackathon team building a livestock health assistant: farmers describe or photograph a symptom and the system responds with guidance and, where appropriate, an escalation path - not a diagnosis.",
     status: "hackathon-prototype",
     role: "Team Lead",
     tech: [
@@ -294,7 +294,7 @@ export const projects: Project[] = [
       github: "https://github.com/Moneeb-Hussain/livestock-ai-assistant",
     },
     safetyNote:
-      "Provides guidance and escalation pathways only — it is not a substitute for veterinary diagnosis.",
+      "Provides guidance and escalation pathways only - it is not a substitute for veterinary diagnosis.",
     relatedSlugs: ["aegisops-ai", "pakai-capital"],
     order: 5,
   },
@@ -302,11 +302,11 @@ export const projects: Project[] = [
   // 6 ------------------------------------------------------------------
   {
     slug: "esgtree",
-    title: "ESGTree — Sustainability Reporting Platform",
+    title: "ESGTree - Sustainability Reporting Platform",
     subtitle:
       "A sanitised case study of a production ESG data-collection and reporting platform built at Septem Systems.",
     summary:
-      "A full-stack sustainability reporting platform that collects ESG data from organisations and turns it into structured reports — described here without client-identifying detail.",
+      "A full-stack sustainability reporting platform that collects ESG data from organisations and turns it into structured reports - described here without client-identifying detail.",
     status: "professional-work",
     confidential: true,
     role: "Full-stack Software Developer",
@@ -324,7 +324,7 @@ export const projects: Project[] = [
     subtitle:
       "A sanitised case study of a case-management workflow system for cross-border legal assistance requests, built at Septem Systems.",
     summary:
-      "A structured workflow platform supporting mutual legal assistance and extradition case processes — described here at a system level, without case records or confidential process detail.",
+      "A structured workflow platform supporting mutual legal assistance and extradition case processes - described here at a system level, without case records or confidential process detail.",
     status: "professional-work",
     confidential: true,
     role: "Full-stack Developer",
@@ -339,7 +339,7 @@ export const projects: Project[] = [
   // 8 ------------------------------------------------------------------
   {
     slug: "hackerrank-orchestrate",
-    title: "HackerRank Orchestrate — Terminal Triage Agent",
+    title: "HackerRank Orchestrate - Terminal Triage Agent",
     subtitle:
       "A terminal-based agent built for HackerRank's Orchestrate competition, triaging support-style tickets across multiple corpora.",
     summary:
@@ -367,7 +367,7 @@ export const projects: Project[] = [
     subtitle:
       "Hands-on PLC and automated storage/retrieval system commissioning at Style Textile.",
     summary:
-      "Commissioned and maintained an automated storage and retrieval system on the plant floor — PLC logic, electrical schematics, I/O troubleshooting, and emergency electrical/control maintenance.",
+      "Commissioned and maintained an automated storage and retrieval system on the plant floor - PLC logic, electrical schematics, I/O troubleshooting, and emergency electrical/control maintenance.",
     status: "industrial-engineering",
     role: "Engineer",
     organization: "Style Textile Pvt. Ltd.",

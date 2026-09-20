@@ -45,7 +45,7 @@ export function ExperienceTimeline({ entries, compact = false }: ExperienceTimel
             </h3>
             <p className="text-sm font-medium text-text-secondary">
               {entry.organization}
-              {entry.location ? ` — ${entry.location}` : ""}
+              {entry.location ? ` - ${entry.location}` : ""}
             </p>
             <p className="mt-3 max-w-2xl text-pretty leading-relaxed text-text-secondary">
               {entry.summary}

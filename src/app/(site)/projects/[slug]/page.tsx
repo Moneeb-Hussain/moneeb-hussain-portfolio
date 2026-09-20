@@ -25,9 +25,9 @@ export function generateStaticParams() {
   return getVisibleProjects().map((project) => ({ slug: project.slug }));
 }
 
-export async function generateMetadata(
-  props: PageProps<"/projects/[slug]">,
-): Promise<Metadata> {
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await props.params;
   const project = getProjectBySlug(slug);
 
@@ -47,9 +47,9 @@ export async function generateMetadata(
   });
 }
 
-export default async function ProjectDetailPage(
-  props: PageProps<"/projects/[slug]">,
-) {
+export default async function ProjectDetailPage(props: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await props.params;
   const project = getProjectBySlug(slug);
 

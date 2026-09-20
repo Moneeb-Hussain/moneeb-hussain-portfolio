@@ -17,7 +17,7 @@ export function AchievementsPreview() {
             id="achievements-preview-heading"
             eyebrow="Achievements"
             title="Verified results, not vanity metrics"
-            description="A selection of competition placements, certifications, and recognitions — each one linked to a source where verification exists."
+            description="A selection of competition placements, certifications, and recognitions - each one linked to a source where verification exists."
           />
           <Link
             href="/achievements"

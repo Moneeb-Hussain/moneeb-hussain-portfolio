@@ -19,7 +19,7 @@ export function ContactPanel() {
         </h2>
         <p className="mt-3 max-w-md text-pretty leading-relaxed text-text-secondary">
           Email is the most reliable way to reach me. I read everything and
-          reply personally — no forms, no gatekeeping.
+          reply personally - no forms, no gatekeeping.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-3">

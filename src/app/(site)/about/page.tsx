@@ -9,7 +9,7 @@ import { DownloadCvButton } from "@/components/common/DownloadCvButton";
 export const metadata: Metadata = buildPageMetadata({
   title: "About",
   description:
-    "Moneeb Hussain's engineering background — from mechatronics and industrial automation to computer vision and multi-agent AI systems.",
+    "Moneeb Hussain's engineering background - from mechatronics and industrial automation to computer vision and multi-agent AI systems.",
   path: "/about",
 });
 
@@ -31,7 +31,7 @@ export default function AboutPage() {
           commissioning and maintaining an automated storage and retrieval
           system at Style Textile meant living with PLC logic, electrical
           schematics, and I/O faults that had to be diagnosed under time
-          pressure — no simulation, no undo button. That grounding in
+          pressure - no simulation, no undo button. That grounding in
           physical systems shows up directly in the final-year thesis that
           followed: a barcode-free retail checkout that had to coordinate a
           stepper motor, a webcam, and a YOLOv4-tiny detector into one
@@ -40,10 +40,10 @@ export default function AboutPage() {
         <p>
           Since then, the work has moved between two modes that inform each
           other. As a Software Engineer at Septem Systems, I build and ship
-          production frontend and backend systems — the kind of work where
+          production frontend and backend systems - the kind of work where
           an API latency improvement from 3.9s to 1.2s matters because real
           users are waiting on it. In parallel, hackathon and research-style
-          projects — AegisOps AI, FirstCheck AI, and others — let me explore
+          projects - AegisOps AI, FirstCheck AI, and others - let me explore
           multi-agent AI, human-in-the-loop decision support, and trustworthy
           system design without a client deadline forcing every corner to be
           cut the same way.

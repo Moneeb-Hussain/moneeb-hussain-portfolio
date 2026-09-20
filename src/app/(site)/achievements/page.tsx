@@ -7,7 +7,7 @@ import { AchievementList } from "@/components/achievements/AchievementList";
 export const metadata: Metadata = buildPageMetadata({
   title: "Achievements",
   description:
-    "Competition results, certifications, and recognitions — each one traceable to a verifiable source where one exists.",
+    "Competition results, certifications, and recognitions - each one traceable to a verifiable source where one exists.",
   path: "/achievements",
 });
 

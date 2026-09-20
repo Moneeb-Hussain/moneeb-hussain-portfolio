@@ -1,0 +1,14 @@
+---
+description: Never use em dashes in copy, comments, or UI text.
+alwaysApply: true
+---
+
+# No em dashes
+
+Never use an em dash (Unicode U+2014), `&mdash;`, or `&#8212;`.
+
+Use a colon, comma, period, or a spaced hyphen (` - `) instead.
+
+Examples:
+- Title: `AegisOps AI: Digital Hospital Command Center`
+- Prose: `Decision support only - not a diagnostic system.`

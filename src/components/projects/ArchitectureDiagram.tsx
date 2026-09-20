@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 
 interface ArchitectureDiagramProps {
-  /** Ordered stage labels — typically a project's own section headings. */
+  /** Ordered stage labels - typically a project's own section headings. */
   stages: string[];
   title?: string;
 }

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { profile } from "@/content/profile";
 
-export const alt = `${profile.name} — ${profile.label}`;
+export const alt = `${profile.name} - ${profile.label}`;
 export const size = {
   width: 1200,
   height: 630,

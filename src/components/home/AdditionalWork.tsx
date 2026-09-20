@@ -17,7 +17,7 @@ export function AdditionalWork() {
             id="additional-work-heading"
             eyebrow="Additional work"
             title="More systems, prototypes, and production work"
-            description="Hackathon builds, professional client engagements, and earlier engineering work — sanitised where confidentiality requires it."
+            description="Hackathon builds, professional client engagements, and earlier engineering work - sanitised where confidentiality requires it."
           />
           <Link
             href="/projects"

@@ -7,7 +7,7 @@ import type { Achievement } from "./types";
 export const achievements: Achievement[] = [
   {
     id: "cs50x-puzzle-day",
-    title: "Harvard CS50x Puzzle Day — Winner, Team Lead",
+    title: "Harvard CS50x Puzzle Day - Winner, Team Lead",
     description:
       "Led a team to a 10/10 winning result at Harvard's CS50x Puzzle Day.",
     category: "competition",
@@ -17,7 +17,7 @@ export const achievements: Achievement[] = [
   },
   {
     id: "hackerrank-orchestrate",
-    title: "HackerRank Orchestrate — Top 4%",
+    title: "HackerRank Orchestrate - Top 4%",
     description:
       "Ranked 373 of roughly 10,000 participants building a terminal triage agent, following a judged interview round.",
     category: "competition",
@@ -26,7 +26,7 @@ export const achievements: Achievement[] = [
   },
   {
     id: "ucla-codesprint",
-    title: "UCLA CodeSprint — Top 8% (Beginner Division)",
+    title: "UCLA CodeSprint - Top 8% (Beginner Division)",
     description:
       "Finished 19th on the Beginner track leaderboard as part of team \"Alpha Fighters.\"",
     category: "competition",
@@ -34,7 +34,7 @@ export const achievements: Achievement[] = [
   },
   {
     id: "icsc-pre-finalist",
-    title: "ICSC 2026 — Pre-Finalist & Special Honour",
+    title: "ICSC 2026 - Pre-Finalist & Special Honour",
     description:
       "Advanced as a pre-finalist and received a Special Honour after passing all test cases.",
     category: "competition",
@@ -43,7 +43,7 @@ export const achievements: Achievement[] = [
   },
   {
     id: "pak-angels-pec-genai",
-    title: "Pak Angels USA & PEC — GenAI Top 5%",
+    title: "Pak Angels USA & PEC - GenAI Top 5%",
     description:
       "Placed in the top 5% of a Generative AI challenge run with Pak Angels USA and the Pakistan Engineering Council.",
     category: "competition",
@@ -51,7 +51,7 @@ export const achievements: Achievement[] = [
   },
   {
     id: "lfr-robowars",
-    title: "Line Following Robot & RoboWars — Competition Winner",
+    title: "Line Following Robot & RoboWars - Competition Winner",
     description:
       "Won institutional robotics competitions in both line-following and combat robotics categories at UET Lahore.",
     category: "competition",
@@ -59,7 +59,7 @@ export const achievements: Achievement[] = [
   },
   {
     id: "ielts-7",
-    title: "IELTS Academic — Band 7.0",
+    title: "IELTS Academic - Band 7.0",
     description:
       "Overall band 7.0 (Listening 7.5, Reading 7.0, Writing 6.5, Speaking 6.5).",
     category: "academic",
@@ -75,7 +75,7 @@ export const achievements: Achievement[] = [
   },
   {
     id: "employee-of-the-quarter",
-    title: "Employee of the Quarter — Septem Systems",
+    title: "Employee of the Quarter - Septem Systems",
     description:
       "Recognised for engineering impact, including a production API latency improvement from 3.9s to 1.2s.",
     category: "recognition",
@@ -83,14 +83,14 @@ export const achievements: Achievement[] = [
   },
   {
     id: "amal-fellowship",
-    title: "AMAL Academy Fellowship — Honors",
+    title: "AMAL Academy Fellowship - Honors",
     description: "Completed the AMAL Academy fellowship program with Honors.",
     category: "recognition",
     priority: 10,
   },
   {
     id: "lean-six-sigma-yellow-belt",
-    title: "Lean Six Sigma — Yellow Belt",
+    title: "Lean Six Sigma - Yellow Belt",
     description: "Certified in Lean Six Sigma Yellow Belt process-improvement methodology.",
     category: "certification",
     priority: 11,

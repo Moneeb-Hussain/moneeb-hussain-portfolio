@@ -15,7 +15,7 @@ const stages = [
     label: "Reason",
     icon: Cpu,
     description:
-      "Models and pipelines interpret that state — detection, classification, retrieval, or multi-agent analysis.",
+      "Models and pipelines interpret that state - detection, classification, retrieval, or multi-agent analysis.",
   },
   {
     label: "Decide",
@@ -41,7 +41,7 @@ export function SystemPipeline() {
           id="system-pipeline-heading"
           eyebrow="How the systems are built"
           title="Sense, reason, decide, act"
-          description="Every project on this site is a version of the same loop: perceive the world, reason over it, decide what to do, then act — with a human in the loop wherever the decision matters."
+          description="Every project on this site is a version of the same loop: perceive the world, reason over it, decide what to do, then act - with a human in the loop wherever the decision matters."
         />
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
