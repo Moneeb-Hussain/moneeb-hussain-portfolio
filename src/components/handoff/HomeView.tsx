@@ -82,8 +82,8 @@ export function HomeView() {
             <Image
               src={handoffProfile.headshotSrc}
               alt={handoffProfile.headshotAlt}
-              width={240}
-              height={240}
+              width={360}
+              height={360}
               className="pf-hero-photo"
               priority
             />

@@ -110,7 +110,7 @@ export const handoffProfile = {
     "Turning machine-learning research into systems that ship, from perception to action.",
   lead: "I am Moneeb Hussain, a software engineer and mechatronics graduate building computer-vision, multimodal-AI and operational decision systems across physical and digital environments.",
   email: "moneebhussain539@gmail.com",
-  phone: "+92 321 4694262",
+  phone: "+92 (321) 4694262",
   phoneHref: "tel:+923214694262",
   github: "https://github.com/Moneeb-Hussain",
   linkedin: "https://www.linkedin.com/in/moneebhussain112/",
