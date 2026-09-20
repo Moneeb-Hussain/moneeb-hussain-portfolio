@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Mail, Phone } from "lucide-react";
 import {
   ACHIEVEMENTS,
   EDUCATION,
@@ -11,6 +12,23 @@ import {
 } from "@/content/handoff";
 import { FeaturedProjects } from "./FeaturedProjects";
 import { HomeNav } from "./Nav";
+import { ContactForm } from "./ContactForm";
+
+function GithubIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.85.09-.67.35-1.12.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85 0 1.71.12 2.51.35 1.9-1.32 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2z" />
+    </svg>
+  );
+}
+
+function LinkedinIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.8 0 0 .77 0 1.73v20.54C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0z" />
+    </svg>
+  );
+}
 
 function PrincipleIcon() {
   return (
@@ -234,29 +252,51 @@ export function HomeView() {
         <div className="pf-footer-inner">
           <h2 className="pf-footer-head">{handoffProfile.footerHeading}</h2>
           <p className="pf-footer-lead">{handoffProfile.footerLead}</p>
-          <div className="pf-footer-links" data-noprint="true">
-            <a href={`mailto:${handoffProfile.email}`} className="pf-btn-primary">
-              {handoffProfile.email}
-            </a>
-            <a href={handoffProfile.phoneHref} className="pf-btn-secondary">
-              {handoffProfile.phone}
-            </a>
-            <a
-              href={handoffProfile.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pf-btn-secondary"
-            >
-              GitHub
-            </a>
-            <a
-              href={handoffProfile.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pf-btn-secondary"
-            >
-              LinkedIn
-            </a>
+          <div className="pf-contact-layout">
+            <div className="pf-contact-details">
+              <a
+                className="pf-contact-card"
+                href={`mailto:${handoffProfile.email}`}
+              >
+                <span className="pf-contact-icon">
+                  <Mail size={18} strokeWidth={2} aria-hidden="true" />
+                </span>
+                <span>
+                  <span className="pf-contact-kicker">Email</span>
+                  <span className="pf-contact-value">{handoffProfile.email}</span>
+                </span>
+              </a>
+              <a className="pf-contact-card" href={handoffProfile.phoneHref}>
+                <span className="pf-contact-icon">
+                  <Phone size={18} strokeWidth={2} aria-hidden="true" />
+                </span>
+                <span>
+                  <span className="pf-contact-kicker">Phone</span>
+                  <span className="pf-contact-value">{handoffProfile.phone}</span>
+                </span>
+              </a>
+              <div className="pf-contact-social" data-noprint="true">
+                <a
+                  href={handoffProfile.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pf-btn-secondary"
+                >
+                  <GithubIcon />
+                  GitHub
+                </a>
+                <a
+                  href={handoffProfile.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pf-btn-secondary"
+                >
+                  <LinkedinIcon />
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+            <ContactForm />
           </div>
           <div className="pf-footer-copy">{handoffProfile.copyright}</div>
         </div>

@@ -13,6 +13,20 @@ import {
 const FEATURED = PROJECTS.filter((project) => project.featured);
 const ADDITIONAL = PROJECTS.filter((project) => !project.featured);
 
+function FlagshipStar() {
+  return (
+    <span className="pf-flagship-star" title="Flagship research project">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M8 1.35 9.76 5.1l4.14.6-3 2.92.7 4.13L8 10.82l-3.6 1.93.7-4.13-3-2.92 4.14-.6L8 1.35z"
+        />
+      </svg>
+      <span className="pf-sr-only">Flagship research project</span>
+    </span>
+  );
+}
+
 function ProjectLinks({
   project,
   showCaseStudy = true,
@@ -49,19 +63,21 @@ export function FeaturedProjects() {
   const [sort, setSort] = useState<ProjectSort>("recent");
   const [expandedId, setExpandedId] = useState<string | null>("retail-checkout");
 
-  const featuredProjects = useMemo(() => {
+    const featuredProjects = useMemo(() => {
     const filtered =
       filter === "All"
         ? FEATURED
         : FEATURED.filter((project) => project.tags.includes(filter));
 
-    if (sort === "impact") {
-      return [...filtered].sort((a, b) => b.impact - a.impact);
-    }
+    const flagship = filtered.filter((project) => project.highlight === "research");
+    const rest = filtered.filter((project) => project.highlight !== "research");
 
-    return [...filtered].sort(
-      (a, b) => FEATURED.indexOf(a) - FEATURED.indexOf(b),
-    );
+    const ordered =
+      sort === "impact"
+        ? [...rest].sort((a, b) => b.impact - a.impact)
+        : [...rest].sort((a, b) => FEATURED.indexOf(a) - FEATURED.indexOf(b));
+
+    return [...flagship, ...ordered];
   }, [filter, sort]);
 
   return (
@@ -114,8 +130,14 @@ export function FeaturedProjects() {
         <div className="pf-project-list">
           {featuredProjects.map((project) => {
             const expanded = expandedId === project.id;
+            const flagship = project.highlight === "research";
             return (
-              <article key={project.id} className="pf-project-card">
+              <article
+                key={project.id}
+                className={
+                  flagship ? "pf-project-card is-flagship" : "pf-project-card"
+                }
+              >
                 <button
                   type="button"
                   className="pf-project-header"
@@ -128,14 +150,22 @@ export function FeaturedProjects() {
                 >
                   <div>
                     <div className="pf-project-meta">
-                      <span className="pf-project-date">{project.date}</span>
+                      {flagship ? (
+                        <span className="pf-tag-pill">Senior Year Thesis</span>
+                      ) : null}
+                      {flagship ? null : (
+                        <span className="pf-project-date">{project.date}</span>
+                      )}
                       {project.tags.map((tag) => (
                         <span key={tag} className="pf-tag-pill">
                           {tag}
                         </span>
                       ))}
                     </div>
-                    <h3 className="pf-project-title">{project.title}</h3>
+                    <h3 className="pf-project-title">
+                      {flagship ? <FlagshipStar /> : null}
+                      {project.title}
+                    </h3>
                     <p className="pf-project-blurb">{project.blurb}</p>
                   </div>
                   <span className="pf-expand-glyph" aria-hidden="true">

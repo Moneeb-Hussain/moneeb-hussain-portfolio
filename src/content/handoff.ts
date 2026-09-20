@@ -40,6 +40,7 @@ export interface HandoffProject {
   sourceHref: string | null;
   caseStudyHref: string | null;
   impact: number;
+  highlight?: "research";
 }
 
 export interface HandoffPrinciple {
@@ -118,8 +119,24 @@ export const handoffProfile = {
   headshotSrc: "/assets/headshot.png",
   headshotAlt: "Portrait of Moneeb Hussain",
   footerHeading: "Let's build something.",
-  footerLead: "Open to computer vision, applied AI, and systems-engineering roles.",
+  footerLead: "Have a role, a project, or a question? Send a note. I reply myself.",
   copyright: "© 2026 Moneeb Hussain",
+} as const;
+
+export const CONTACT_FORM = {
+  nameLabel: "Name",
+  namePlaceholder: "Your full name",
+  emailLabel: "Email",
+  emailPlaceholder: "your@email.com",
+  linkedinLabel: "LinkedIn Profile (Optional)",
+  linkedinPlaceholder: "https://linkedin.com/in/yourprofile",
+  messageLabel: "Message",
+  messagePlaceholder:
+    "Tell me about your project, opportunity, or idea...",
+  submit: "Send Message",
+  sending: "Sending...",
+  success: "Sent. I will reply to the email you entered.",
+  error: "Could not send. Email me directly instead.",
 } as const;
 
 export const handoffNav = [
@@ -143,6 +160,7 @@ export const PROJECTS: HandoffProject[] = [
   {
     id: "retail-checkout",
     featured: true,
+    highlight: "research",
     title: "Automatic Retail Checkout V-3",
     date: "2020 – 2021 · Senior Thesis",
     tags: ["Computer Vision", "Robotics"],
